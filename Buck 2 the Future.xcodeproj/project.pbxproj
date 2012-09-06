@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFC80E7C15F86C750082AB83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC80E7B15F86C750082AB83 /* UIKit.framework */; };
+		EFC80E7E15F86C750082AB83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC80E7D15F86C750082AB83 /* Foundation.framework */; };
+		EFC80E8015F86C750082AB83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC80E7F15F86C750082AB83 /* CoreGraphics.framework */; };
+		EFC80E8615F86C750082AB83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFC80E8415F86C750082AB83 /* InfoPlist.strings */; };
+		EFC80E8815F86C750082AB83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E8715F86C750082AB83 /* main.m */; };
+		EFC80E8C15F86C750082AB83 /* Buck2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E8B15F86C750082AB83 /* Buck2AppDelegate.m */; };
+		EFC80E8F15F86C750082AB83 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC80E8D15F86C750082AB83 /* MainStoryboard.storyboard */; };
+		EFC80E9215F86C750082AB83 /* Buck2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E9115F86C750082AB83 /* Buck2ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EFC80E7715F86C750082AB83 /* Buck 2 the Future.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buck 2 the Future.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFC80E7B15F86C750082AB83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EFC80E7D15F86C750082AB83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EFC80E7F15F86C750082AB83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EFC80E8315F86C750082AB83 /* Buck 2 the Future-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buck 2 the Future-Info.plist"; sourceTree = "<group>"; };
+		EFC80E8515F86C750082AB83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EFC80E8715F86C750082AB83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EFC80E8915F86C750082AB83 /* Buck 2 the Future-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Buck 2 the Future-Prefix.pch"; sourceTree = "<group>"; };
+		EFC80E8A15F86C750082AB83 /* Buck2AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buck2AppDelegate.h; sourceTree = "<group>"; };
+		EFC80E8B15F86C750082AB83 /* Buck2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Buck2AppDelegate.m; sourceTree = "<group>"; };
+		EFC80E8E15F86C750082AB83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		EFC80E9015F86C750082AB83 /* Buck2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buck2ViewController.h; sourceTree = "<group>"; };
+		EFC80E9115F86C750082AB83 /* Buck2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Buck2ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFC80E7415F86C750082AB83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFC80E7C15F86C750082AB83 /* UIKit.framework in Frameworks */,
+				EFC80E7E15F86C750082AB83 /* Foundation.framework in Frameworks */,
+				EFC80E8015F86C750082AB83 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFC80E6C15F86C750082AB83 = {
+			isa = PBXGroup;
+			children = (
+				EFC80E8115F86C750082AB83 /* Buck 2 the Future */,
+				EFC80E7A15F86C750082AB83 /* Frameworks */,
+				EFC80E7815F86C750082AB83 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFC80E7815F86C750082AB83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFC80E7715F86C750082AB83 /* Buck 2 the Future.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFC80E7A15F86C750082AB83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFC80E7B15F86C750082AB83 /* UIKit.framework */,
+				EFC80E7D15F86C750082AB83 /* Foundation.framework */,
+				EFC80E7F15F86C750082AB83 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFC80E8115F86C750082AB83 /* Buck 2 the Future */ = {
+			isa = PBXGroup;
+			children = (
+				EFC80E8A15F86C750082AB83 /* Buck2AppDelegate.h */,
+				EFC80E8B15F86C750082AB83 /* Buck2AppDelegate.m */,
+				EFC80E8D15F86C750082AB83 /* MainStoryboard.storyboard */,
+				EFC80E9015F86C750082AB83 /* Buck2ViewController.h */,
+				EFC80E9115F86C750082AB83 /* Buck2ViewController.m */,
+				EFC80E8215F86C750082AB83 /* Supporting Files */,
+			);
+			path = "Buck 2 the Future";
+			sourceTree = "<group>";
+		};
+		EFC80E8215F86C750082AB83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFC80E8315F86C750082AB83 /* Buck 2 the Future-Info.plist */,
+				EFC80E8415F86C750082AB83 /* InfoPlist.strings */,
+				EFC80E8715F86C750082AB83 /* main.m */,
+				EFC80E8915F86C750082AB83 /* Buck 2 the Future-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFC80E7615F86C750082AB83 /* Buck 2 the Future */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFC80E9515F86C750082AB83 /* Build configuration list for PBXNativeTarget "Buck 2 the Future" */;
+			buildPhases = (
+				EFC80E7315F86C750082AB83 /* Sources */,
+				EFC80E7415F86C750082AB83 /* Frameworks */,
+				EFC80E7515F86C750082AB83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Buck 2 the Future";
+			productName = "Buck 2 the Future";
+			productReference = EFC80E7715F86C750082AB83 /* Buck 2 the Future.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFC80E6E15F86C750082AB83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Buck2;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Jeremiah Kent";
+			};
+			buildConfigurationList = EFC80E7115F86C750082AB83 /* Build configuration list for PBXProject "Buck 2 the Future" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EFC80E6C15F86C750082AB83;
+			productRefGroup = EFC80E7815F86C750082AB83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFC80E7615F86C750082AB83 /* Buck 2 the Future */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFC80E7515F86C750082AB83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFC80E8615F86C750082AB83 /* InfoPlist.strings in Resources */,
+				EFC80E8F15F86C750082AB83 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFC80E7315F86C750082AB83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFC80E8815F86C750082AB83 /* main.m in Sources */,
+				EFC80E8C15F86C750082AB83 /* Buck2AppDelegate.m in Sources */,
+				EFC80E9215F86C750082AB83 /* Buck2ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EFC80E8415F86C750082AB83 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFC80E8515F86C750082AB83 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EFC80E8D15F86C750082AB83 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFC80E8E15F86C750082AB83 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFC80E9315F86C750082AB83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EFC80E9415F86C750082AB83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EFC80E9615F86C750082AB83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Buck 2 the Future/Buck 2 the Future-Prefix.pch";
+				INFOPLIST_FILE = "Buck 2 the Future/Buck 2 the Future-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EFC80E9715F86C750082AB83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Buck 2 the Future/Buck 2 the Future-Prefix.pch";
+				INFOPLIST_FILE = "Buck 2 the Future/Buck 2 the Future-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFC80E7115F86C750082AB83 /* Build configuration list for PBXProject "Buck 2 the Future" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFC80E9315F86C750082AB83 /* Debug */,
+				EFC80E9415F86C750082AB83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFC80E9515F86C750082AB83 /* Build configuration list for PBXNativeTarget "Buck 2 the Future" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFC80E9615F86C750082AB83 /* Debug */,
+				EFC80E9715F86C750082AB83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFC80E6E15F86C750082AB83 /* Project object */;
+}
