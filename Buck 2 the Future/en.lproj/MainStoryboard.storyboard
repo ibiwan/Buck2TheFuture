@@ -36,7 +36,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <action selector="descriptionChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="bYa-3t-dkF"/>
-                                                <outlet property="delegate" destination="U8w-si-mtI" id="arg-Kw-YCl"/>
+                                                <outlet property="delegate" destination="U8w-si-mtI" id="SLn-t4-IKb"/>
                                             </connections>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" minimumFontSize="17" id="wGP-sg-dru">
@@ -46,7 +46,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <action selector="amountChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="p1q-zd-gps"/>
-                                                <outlet property="delegate" destination="U8w-si-mtI" id="JU1-Vm-u8i"/>
+                                                <outlet property="delegate" destination="U8w-si-mtI" id="91x-y2-3Fh"/>
                                             </connections>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Date" minimumFontSize="17" id="udO-e9-Iw8">
@@ -56,7 +56,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <action selector="dateChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="bwj-sZ-SUR"/>
-                                                <outlet property="delegate" destination="U8w-si-mtI" id="5K8-gb-lyN"/>
+                                                <outlet property="delegate" destination="U8w-si-mtI" id="FKh-wd-0Vj"/>
                                             </connections>
                                         </textField>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Repeats?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Wr3-Xt-gMj">
@@ -112,7 +112,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <action selector="descriptionChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="hg5-3h-urf"/>
-                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="ojn-9b-asz"/>
+                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="Ww8-RM-Z30"/>
                                             </connections>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Date" minimumFontSize="17" id="7T5-dJ-yeN">
@@ -122,7 +122,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <action selector="dateChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="I4N-Oe-ti7"/>
-                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="m1i-6q-qQx"/>
+                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="505-OA-c50"/>
                                             </connections>
                                         </textField>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Repeats?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="hK4-RG-f9p">
@@ -146,7 +146,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <action selector="amountChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="9m8-II-IgV"/>
-                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="P5U-Hy-69g"/>
+                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="ot0-it-WzV"/>
                                             </connections>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How Many" minimumFontSize="17" id="Rvs-8i-gZg">
@@ -156,7 +156,7 @@
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
                                                 <action selector="frequencyChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="sz6-yq-ogq"/>
-                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="3S5-KQ-hZc"/>
+                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="JHq-AH-Fyr"/>
                                             </connections>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Interval" minimumFontSize="17" id="EHi-oo-eeQ">
@@ -166,7 +166,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <action selector="unitsChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="wl5-m7-Eoa"/>
-                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="QX9-tf-OJG"/>
+                                                <outlet property="delegate" destination="Uaa-4e-S3C" id="C5p-18-pIn"/>
                                             </connections>
                                         </textField>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Days-Weeks-Months-Years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="6Nr-yr-bi0">
@@ -248,12 +248,106 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IF-w9-u9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334" y="-161"/>
+            <point key="canvasLocation" x="296" y="-161"/>
         </scene>
         <!--Buck2 Future Table View Controller - Future-->
         <scene sceneID="ekX-gM-Hfk">
             <objects>
                 <tableViewController id="VY3-al-2Ov" customClass="Buck2FutureTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uT5-QB-4lO">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="separatorColor" red="0.26505768229999999" green="0.35990222579999998" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="limitsRow" rowHeight="47" id="8iy-by-r4c">
+                                <rect key="frame" x="0.0" y="22" width="320" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Yellow:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DLF-Qc-5Ij">
+                                            <rect key="frame" x="20" y="11" width="58" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$200" minimumFontSize="17" id="OaD-98-pP2">
+                                            <rect key="frame" x="86" y="7" width="58" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            <connections>
+                                                <action selector="unitsChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="gR2-FX-YVJ"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$20" minimumFontSize="17" id="ydQ-wt-m4a">
+                                            <rect key="frame" x="242" y="7" width="58" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            <connections>
+                                                <action selector="unitsChanged:" destination="7U4-V6-OqW" eventType="editingDidEnd" id="c63-ez-Gkd"/>
+                                            </connections>
+                                        </textField>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Red:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="KTH-xO-lQ9">
+                                            <rect key="frame" x="194" y="11" width="40" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="eventRow" rowHeight="46" id="fid-Uw-jVQ">
+                                <rect key="frame" x="0.0" y="69" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01/01/DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="00H-4a-GWk">
+                                            <rect key="frame" x="20" y="0.0" width="97" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IMC-wd-y5e">
+                                            <rect key="frame" x="20" y="20" width="97" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$Amou.nt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="KMz-om-lxA">
+                                            <rect key="frame" x="122" y="20" width="77" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$Balan.ce" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="1O2-eU-sfQ">
+                                            <rect key="frame" x="223" y="20" width="77" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VY3-al-2Ov" id="R3P-ZJ-bXq"/>
+                            <outlet property="delegate" destination="VY3-al-2Ov" id="HVG-aj-a6J"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" title="Future" id="w7K-Bn-bD0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4X1-hD-btC" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -44,21 +44,35 @@
 }
 
 -(Buck2Expense *)initWithDict:(NSDictionary *)dict {
-    return [self initWithDescription:[dict objectForKey:@"description"]
-                                date:[dict objectForKey:@"date"]
-                              amount:[dict objectForKey:@"amount"]
-                           frequency:[dict objectForKey:@"frequency"]
-                               units:[dict objectForKey:@"units"]];
+    if ([(NSNumber*)[dict objectForKey:@"repeats"] boolValue])
+        return [self initWithDescription:[dict objectForKey:@"description"]
+                                    date:[dict objectForKey:@"date"]
+                                  amount:[dict objectForKey:@"amount"]
+                               frequency:[dict objectForKey:@"frequency"]
+                                   units:[dict objectForKey:@"units"]];
+    else
+        return [self initWithDescription:[dict objectForKey:@"description"]
+                                    date:[dict objectForKey:@"date"]
+                                  amount:[dict objectForKey:@"amount"]];
 }
 
 -(NSDictionary *)dict {
-    return [NSDictionary dictionaryWithObjectsAndKeys:
-            self.description, @"description",
-            self.date, @"date",
-            self.amount, @"amount",
-            self.frequency, @"frequency",
-            self.units, @"units",
-            nil];
+    NSMutableDictionary *mdict = [[NSMutableDictionary alloc] init];
+    [mdict setValue:self.description
+             forKey:@"description"];
+    [mdict setValue:self.date
+             forKey:@"date"];
+    [mdict setValue:self.amount
+             forKey:@"amount"];
+    [mdict setValue:[NSNumber numberWithBool:self.repeats]
+             forKey:@"repeats"];
+    if (self.repeats) {
+        [mdict setValue:self.frequency
+                 forKey:@"frequency"];
+        [mdict setValue:self.units
+                 forKey:@"units"];
+    }
+    return [mdict copy];
 }
 
 -(Buck2Expense *)copy

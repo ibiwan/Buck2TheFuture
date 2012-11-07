@@ -125,6 +125,8 @@
         Buck2Expense *expense = [[Buck2Expense alloc] initWithDict:dict];
         [self addExpense:expense];
     }
+    if ([expenseDicts count] > 0)
+        return YES;
     return NO;
 }
 @end

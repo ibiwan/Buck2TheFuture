@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.showsSelectionIndicator = true;    }
+        self.showsSelectionIndicator = YES;    }
     return self;
 }
 
