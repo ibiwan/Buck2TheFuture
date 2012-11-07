@@ -113,14 +113,14 @@
     for (Buck2Expense *expense in self.expenses) {
         [expenseDicts addObject:[expense dict]];
     }
-    [[NSUserDefaults standardUserDefaults] setObject:expenseDicts forKey:@"expenses"];
+    [[NSUserDefaults standardUserDefaults] setObject:expenseDicts forKey:KEY_EXPS];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(BOOL)loadFromDeaults
 {
     [self clearExpenses];
-    NSArray *expenseDicts = [[NSUserDefaults standardUserDefaults] objectForKey:@"expenses"];
+    NSArray *expenseDicts = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_EXPS];
     for (NSDictionary *dict in expenseDicts) {
         Buck2Expense *expense = [[Buck2Expense alloc] initWithDict:dict];
         [self addExpense:expense];

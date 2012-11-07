@@ -61,36 +61,63 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.budgetEvents.count;
+    return [self.budgetEvents count] + 1; // one for the "limits" row
 }
+
+//shorthand, used only in the function below
+#define RETURNCELL(type, identifier)                                       \
+    type *cell = [tableView dequeueReusableCellWithIdentifier:identifier]; \
+    if (!cell) cell = [[type alloc] init];                                 \
+    return cell;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
-    
-    return cell;
+    if (0 == [indexPath row])
+    {
+        RETURNCELL(Buck2UITableViewLimitsCell, @"limitsRow");
+    }
+    else
+    {
+        RETURNCELL(Buck2UITableViewEventCell, @"eventRow");
+    }
 }
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return NO;
-}
-
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if (0 == [indexPath row] )
+    {
+        Buck2UITableViewLimitsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"limitsRow"];
+        return cell.bounds.size.height;
+    }
+    Buck2UITableViewEventCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventRow"];
+    return cell.bounds.size.height;
+}
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (0 == [indexPath row] )
+    {
+        Buck2UITableViewLimitsCell *cel = (Buck2UITableViewLimitsCell *)cell;
+        cel.Yellow.text = [NSString stringWithFormat:@"$%@", self.yellowLimit];
+        cel.Red.text = [NSString stringWithFormat:@"$%@", self.redLimit];
+    }
+    else
+    {
+        Buck2UITableViewEventCell *cel = (Buck2UITableViewEventCell *)cell;
+        Buck2Expense *exp = [self.budgetEvents objectAtIndex:[indexPath row]-1];
+        cel.Description.text = exp.description;
+        cel.Date.text = [exp.date description];
+        cel.Amount.text = [NSString stringWithFormat:@"$%@", exp.amount];
+        cel.Balance.text = [NSString stringWithFormat:@"$%@", exp.amount];
+        if (exp.amount > self.yellowLimit)
+            cel.Balance.textColor = [UIColor yellowColor];
+        if (exp.amount > self.redLimit)
+            cel.Balance.textColor = [UIColor redColor];
+    }
 }
 
 @end

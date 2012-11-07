@@ -83,12 +83,13 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:()sender
 {
     NSMutableArray *budgetEvents = [[NSMutableArray alloc] init];
-    NSDate *now = [[NSDate alloc] init];
+    NSDate *now = [[NSDate alloc] initWithTimeIntervalSinceNow:10000.0];
     NSDate *expenseDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];
-    while ([self.crystalBall expenseCount] > 0
+    Buck2CrystalBall *ball = [self.crystalBall copy];
+    while ([ball expenseCount] > 0
            && expenseDate < now)
     {
-        Buck2Expense *expense = [self.crystalBall getNextExpense];
+        Buck2Expense *expense = [ball getNextExpense];
         [budgetEvents addObject:expense];
         expenseDate = expense.date;
     }

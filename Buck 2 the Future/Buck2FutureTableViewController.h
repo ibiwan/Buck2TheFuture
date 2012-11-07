@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Buck2CrystalBall.h"
+#import "Buck2UITableViewEventCell.h"
+#import "Buck2UITableViewLimitsCell.h"
 
 @interface Buck2FutureTableViewController : UITableViewController
 
 @property (weak, nonatomic) NSArray *budgetEvents;
 @property (strong, nonatomic) NSNumber *yellowLimit;
 @property (strong, nonatomic) NSNumber *redLimit;
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

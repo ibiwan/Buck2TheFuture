@@ -12,6 +12,13 @@
 #define UNITS_WEEKS       @"weeks"
 #define UNITS_MONTHS      @"months"
 #define UNITS_YEARS       @"years"
+#define KEY_DSCR          @"description"
+#define KEY_DATE          @"date"
+#define KEY_AMNT          @"amount"
+#define KEY_RPTS          @"repeats"
+#define KEY_FREQ          @"frequency"
+#define KEY_UNIT          @"units"
+#define KEY_EXPS          @"expenses"
 
 @interface Buck2Expense : NSObject
 

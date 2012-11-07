@@ -10,6 +10,8 @@
 		EF14721E15FED56A00B7B3D8 /* Buck2Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = EF14721D15FED56A00B7B3D8 /* Buck2Expense.m */; };
 		EF343344162268F7002C3DAB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF343343162268F7002C3DAB /* Default-568h@2x.png */; };
 		EF343348162529B1002C3DAB /* Buck2IntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF343347162529B1002C3DAB /* Buck2IntervalPickerView.m */; };
+		EF5101B2164A52300042DB93 /* Buck2UITableViewEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5101B1164A52300042DB93 /* Buck2UITableViewEventCell.m */; };
+		EF5101B5164A52750042DB93 /* Buck2UITableViewLimitsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5101B4164A52750042DB93 /* Buck2UITableViewLimitsCell.m */; };
 		EF5E945115F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5E945015F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m */; };
 		EF6B4E0B15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6B4E0A15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m */; };
 		EFC80E7C15F86C750082AB83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC80E7B15F86C750082AB83 /* UIKit.framework */; };
@@ -32,6 +34,10 @@
 		EF343343162268F7002C3DAB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EF343346162529B1002C3DAB /* Buck2IntervalPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2IntervalPickerView.h; sourceTree = "<group>"; };
 		EF343347162529B1002C3DAB /* Buck2IntervalPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2IntervalPickerView.m; sourceTree = "<group>"; };
+		EF5101B0164A52300042DB93 /* Buck2UITableViewEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewEventCell.h; sourceTree = "<group>"; };
+		EF5101B1164A52300042DB93 /* Buck2UITableViewEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2UITableViewEventCell.m; sourceTree = "<group>"; };
+		EF5101B3164A52750042DB93 /* Buck2UITableViewLimitsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewLimitsCell.h; sourceTree = "<group>"; };
+		EF5101B4164A52750042DB93 /* Buck2UITableViewLimitsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2UITableViewLimitsCell.m; sourceTree = "<group>"; };
 		EF5E944F15F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewRepeatingExpenseCell.h; sourceTree = "<group>"; };
 		EF5E945015F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2UITableViewRepeatingExpenseCell.m; sourceTree = "<group>"; };
 		EF6B4E0915FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewNewExpenseCell.h; sourceTree = "<group>"; };
@@ -73,6 +79,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF5101AD164A51340042DB93 /* Cell Prototypes */ = {
+			isa = PBXGroup;
+			children = (
+				EF5101B0164A52300042DB93 /* Buck2UITableViewEventCell.h */,
+				EF5101B1164A52300042DB93 /* Buck2UITableViewEventCell.m */,
+				EF5101B3164A52750042DB93 /* Buck2UITableViewLimitsCell.h */,
+				EF5101B4164A52750042DB93 /* Buck2UITableViewLimitsCell.m */,
+				EFF0A4D616006711002ED157 /* Buck2UITableViewExpenseCell.h */,
+				EFF0A4D716006711002ED157 /* Buck2UITableViewExpenseCell.m */,
+				EF6B4E0915FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.h */,
+				EF6B4E0A15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m */,
+				EF5E944F15F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.h */,
+				EF5E945015F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m */,
+			);
+			name = "Cell Prototypes";
+			sourceTree = "<group>";
+		};
+		EF5101AF164A51490042DB93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF14721C15FED56A00B7B3D8 /* Buck2Expense.h */,
+				EF14721D15FED56A00B7B3D8 /* Buck2Expense.m */,
+				EFC80E9E15F877910082AB83 /* Buck2CrystalBall.h */,
+				EFC80E9F15F877910082AB83 /* Buck2CrystalBall.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		EFC80E6C15F86C750082AB83 = {
 			isa = PBXGroup;
 			children = (
@@ -104,27 +138,19 @@
 		EFC80E8115F86C750082AB83 /* Buck 2 the Future */ = {
 			isa = PBXGroup;
 			children = (
-				EF14721C15FED56A00B7B3D8 /* Buck2Expense.h */,
-				EF14721D15FED56A00B7B3D8 /* Buck2Expense.m */,
-				EFF0A4D616006711002ED157 /* Buck2UITableViewExpenseCell.h */,
-				EFF0A4D716006711002ED157 /* Buck2UITableViewExpenseCell.m */,
-				EF343346162529B1002C3DAB /* Buck2IntervalPickerView.h */,
-				EF343347162529B1002C3DAB /* Buck2IntervalPickerView.m */,
+				EF5101AD164A51340042DB93 /* Cell Prototypes */,
+				EF5101AF164A51490042DB93 /* Model */,
+				EFC80E8D15F86C750082AB83 /* MainStoryboard.storyboard */,
 				EFC80E8A15F86C750082AB83 /* Buck2AppDelegate.h */,
 				EFC80E8B15F86C750082AB83 /* Buck2AppDelegate.m */,
-				EFC80E8D15F86C750082AB83 /* MainStoryboard.storyboard */,
-				EF6B4E0915FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.h */,
-				EF6B4E0A15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m */,
-				EF5E944F15F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.h */,
-				EF5E945015F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m */,
-				EFC80E9E15F877910082AB83 /* Buck2CrystalBall.h */,
-				EFC80E9F15F877910082AB83 /* Buck2CrystalBall.m */,
+				EFC80E9015F86C750082AB83 /* Buck2ViewController.h */,
+				EFC80E9115F86C750082AB83 /* Buck2ViewController.m */,
+				EF343346162529B1002C3DAB /* Buck2IntervalPickerView.h */,
+				EF343347162529B1002C3DAB /* Buck2IntervalPickerView.m */,
 				EFC80E9B15F8764C0082AB83 /* Buck2FutureTableViewController.h */,
 				EFC80E9C15F8764C0082AB83 /* Buck2FutureTableViewController.m */,
 				EFC80E9815F871180082AB83 /* Buck2ExpensesTableViewController.h */,
 				EFC80E9915F871180082AB83 /* Buck2ExpensesTableViewController.m */,
-				EFC80E9015F86C750082AB83 /* Buck2ViewController.h */,
-				EFC80E9115F86C750082AB83 /* Buck2ViewController.m */,
 				EFC80E8215F86C750082AB83 /* Supporting Files */,
 			);
 			path = "Buck 2 the Future";
@@ -217,6 +243,8 @@
 				EF6B4E0B15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m in Sources */,
 				EFF0A4D816006711002ED157 /* Buck2UITableViewExpenseCell.m in Sources */,
 				EF343348162529B1002C3DAB /* Buck2IntervalPickerView.m in Sources */,
+				EF5101B2164A52300042DB93 /* Buck2UITableViewEventCell.m in Sources */,
+				EF5101B5164A52750042DB93 /* Buck2UITableViewLimitsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

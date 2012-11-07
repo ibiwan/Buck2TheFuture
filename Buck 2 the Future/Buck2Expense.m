@@ -23,10 +23,12 @@
                               amount:(NSNumber *)amount
 {
     self = [super init];
-    self.description = description;
-    self.date = date;
-    self.amount = amount;
-    self.repeats = NO;
+    if (self) {
+        self.description = description;
+        self.date = date;
+        self.amount = amount;
+        self.repeats = NO;
+    }
     return self;
 }
 
@@ -44,33 +46,29 @@
 }
 
 -(Buck2Expense *)initWithDict:(NSDictionary *)dict {
-    if ([(NSNumber*)[dict objectForKey:@"repeats"] boolValue])
-        return [self initWithDescription:[dict objectForKey:@"description"]
-                                    date:[dict objectForKey:@"date"]
-                                  amount:[dict objectForKey:@"amount"]
-                               frequency:[dict objectForKey:@"frequency"]
-                                   units:[dict objectForKey:@"units"]];
+    if ([(NSNumber*)[dict objectForKey:KEY_RPTS] boolValue])
+        return [self initWithDescription:[dict objectForKey:KEY_DSCR]
+                                    date:[dict objectForKey:KEY_DATE]
+                                  amount:[dict objectForKey:KEY_AMNT]
+                               frequency:[dict objectForKey:KEY_FREQ]
+                                   units:[dict objectForKey:KEY_UNIT]];
     else
-        return [self initWithDescription:[dict objectForKey:@"description"]
-                                    date:[dict objectForKey:@"date"]
-                                  amount:[dict objectForKey:@"amount"]];
+        return [self initWithDescription:[dict objectForKey:KEY_DSCR]
+                                    date:[dict objectForKey:KEY_DATE]
+                                  amount:[dict objectForKey:KEY_AMNT]];
 }
 
 -(NSDictionary *)dict {
-    NSMutableDictionary *mdict = [[NSMutableDictionary alloc] init];
-    [mdict setValue:self.description
-             forKey:@"description"];
-    [mdict setValue:self.date
-             forKey:@"date"];
-    [mdict setValue:self.amount
-             forKey:@"amount"];
-    [mdict setValue:[NSNumber numberWithBool:self.repeats]
-             forKey:@"repeats"];
+    NSMutableDictionary *mdict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                  self.description, KEY_DSCR,
+                                  self.date,        KEY_DATE,
+                                  self.amount,      KEY_AMNT,
+                                  [NSNumber numberWithBool:self.repeats],
+                                                    KEY_RPTS,
+                                  nil];
     if (self.repeats) {
-        [mdict setValue:self.frequency
-                 forKey:@"frequency"];
-        [mdict setValue:self.units
-                 forKey:@"units"];
+        [mdict setValue:self.frequency  forKey:KEY_FREQ];
+        [mdict setValue:self.units      forKey:KEY_UNIT];
     }
     return [mdict copy];
 }
@@ -90,6 +88,5 @@
 {
     self.repeats = !self.repeats;
 }
-
 
 @end
