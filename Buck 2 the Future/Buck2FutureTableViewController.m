@@ -72,7 +72,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (0 == [indexPath row])
+    if (0 == indexPath.row)
     {
         RETURNCELL(Buck2UITableViewLimitsCell, @"limitsRow");
     }
@@ -99,7 +99,7 @@
   willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (0 == [indexPath row] )
+    if (0 == indexPath.row )
     {
         Buck2UITableViewLimitsCell *cel = (Buck2UITableViewLimitsCell *)cell;
         cel.Yellow.text = [NSString stringWithFormat:@"$%@", self.yellowLimit];
@@ -112,7 +112,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         cel.Description.text = exp.description;
         cel.Date.text = [exp.date description];
         cel.Amount.text = [NSString stringWithFormat:@"$%@", exp.amount];
-        cel.Balance.text = [NSString stringWithFormat:@"$%@", exp.amount];
+        cel.Balance.text = [NSString stringWithFormat:@"$%@", exp.runningTotal];
         if (exp.amount > self.yellowLimit)
             cel.Balance.textColor = [UIColor yellowColor];
         if (exp.amount > self.redLimit)

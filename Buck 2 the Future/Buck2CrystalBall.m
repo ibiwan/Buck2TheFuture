@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) NSMutableArray *expenses;
 @property (strong, nonatomic) NSCalendar *calendar;
+- (Buck2CrystalBall *)initWithArray:(NSArray *)array;
+- (BOOL)loadFromArray:(NSArray *)array;
+- (NSArray *)array;
 
 @end
 
@@ -107,26 +110,51 @@
     [self.expenses removeObjectAtIndex:index];
 }
 
--(void)saveToDefaults
+- (BOOL)loadFromArray:(NSArray *)array {
+    for (NSDictionary *dict in array) {
+        Buck2Expense *expense = [[Buck2Expense alloc] initWithDict:dict];
+        [self addExpense:expense];
+    }
+    return (self.expenseCount > 0);
+}
+
+- (Buck2CrystalBall *)initWithArray:(NSArray *)array
+{
+    self = [super init];
+    if (self) {
+        [self loadFromArray:array];
+    }
+    return self;
+}
+
+- (NSArray *)array
 {
     NSMutableArray *expenseDicts = [[NSMutableArray alloc] init];
     for (Buck2Expense *expense in self.expenses) {
         [expenseDicts addObject:[expense dict]];
     }
-    [[NSUserDefaults standardUserDefaults] setObject:expenseDicts forKey:KEY_EXPS];
+    return [expenseDicts copy];
+}
+
+-(void)saveToDefaults
+{
+    [[NSUserDefaults standardUserDefaults] setObject:[self array] forKey:KEY_EXPS];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
--(BOOL)loadFromDeaults
+-(BOOL)loadFromDefaults
 {
-    [self clearExpenses];
     NSArray *expenseDicts = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_EXPS];
-    for (NSDictionary *dict in expenseDicts) {
-        Buck2Expense *expense = [[Buck2Expense alloc] initWithDict:dict];
-        [self addExpense:expense];
+    if (expenseDicts) {
+        [self clearExpenses];
+        return [self loadFromArray:expenseDicts];
     }
-    if ([expenseDicts count] > 0)
-        return YES;
     return NO;
 }
+
+-(Buck2CrystalBall *)copy
+{
+    return [[Buck2CrystalBall alloc] initWithArray:[self array]];
+}
+
 @end

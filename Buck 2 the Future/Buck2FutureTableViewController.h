@@ -13,7 +13,7 @@
 
 @interface Buck2FutureTableViewController : UITableViewController
 
-@property (weak, nonatomic) NSArray *budgetEvents;
+@property (strong, nonatomic) NSArray *budgetEvents;
 @property (strong, nonatomic) NSNumber *yellowLimit;
 @property (strong, nonatomic) NSNumber *redLimit;
 

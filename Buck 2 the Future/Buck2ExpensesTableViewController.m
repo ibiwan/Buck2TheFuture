@@ -45,7 +45,7 @@
 
 - (void)awakeFromNib
 {
-    if (![self.crystalBall loadFromDeaults])
+    if (![self.crystalBall loadFromDefaults])
         [self loadDummyData];
 }
 
@@ -83,13 +83,16 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:()sender
 {
     NSMutableArray *budgetEvents = [[NSMutableArray alloc] init];
-    NSDate *now = [[NSDate alloc] initWithTimeIntervalSinceNow:10000.0];
+    NSDate *now = [[NSDate alloc] initWithTimeIntervalSinceNow:3024000.0];
     NSDate *expenseDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];
     Buck2CrystalBall *ball = [self.crystalBall copy];
+    float runningTotal = 0.0;
     while ([ball expenseCount] > 0
-           && expenseDate < now)
+           && [expenseDate compare:now] == NSOrderedAscending)
     {
         Buck2Expense *expense = [ball getNextExpense];
+        runningTotal += [expense.amount floatValue];
+        expense.runningTotal = [NSNumber numberWithFloat:runningTotal];
         [budgetEvents addObject:expense];
         expenseDate = expense.date;
     }
@@ -97,7 +100,7 @@
         Buck2FutureTableViewController *target = (Buck2FutureTableViewController*)segue.destinationViewController;
         target.budgetEvents = budgetEvents;
         target.yellowLimit = [NSNumber numberWithDouble:200.0];
-        target.redLimit = [NSNumber numberWithDouble:5.0];
+        target.redLimit = [NSNumber numberWithDouble:5.1];
     }
 }
 

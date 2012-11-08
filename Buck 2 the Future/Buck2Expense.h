@@ -29,6 +29,8 @@
 @property (nonatomic, strong) NSNumber *frequency;
 @property (nonatomic, strong) NSString *units;
 
+@property (nonatomic, strong) NSNumber *runningTotal;
+
 -(Buck2Expense *)initWithDescription:(NSString *)description
                                 date:(NSDate *)date
                               amount:(NSNumber *)amount;

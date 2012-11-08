@@ -15,7 +15,8 @@
             amount = _amount,
             repeats = _repeats,
             frequency = _frequency,
-            units = _units;
+            units = _units,
+            runningTotal = _runningTotal;
 
 
 -(Buck2Expense *)initWithDescription:(NSString *)description

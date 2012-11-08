@@ -28,6 +28,8 @@
 -(void)deleteEventAtIndex:(NSUInteger)index;
 
 -(void)saveToDefaults;
--(BOOL)loadFromDeaults;
+-(BOOL)loadFromDefaults;
+
+-(Buck2CrystalBall *)copy;
 
 @end
