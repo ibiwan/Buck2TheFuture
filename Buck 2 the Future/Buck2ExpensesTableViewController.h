@@ -21,8 +21,9 @@
 - (IBAction)unitsChanged:(UITextField *)sender;
 
 - (IBAction)toggleRepeat:(UISwitch *)sender;
+- (IBAction)toggleType:(id)sender;
 
-- (IBAction)addExpense;
 - (IBAction)deleteExpense:(UIButton *)sender;
+- (IBAction)addRow:(id)sender;
 
 @end

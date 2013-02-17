@@ -15,10 +15,17 @@
 #define KEY_DSCR          @"description"
 #define KEY_DATE          @"date"
 #define KEY_AMNT          @"amount"
+#define KEY_TYPE          @"event_type"
 #define KEY_RPTS          @"repeats"
 #define KEY_FREQ          @"frequency"
 #define KEY_UNIT          @"units"
 #define KEY_EXPS          @"expenses"
+
+typedef enum {
+    Income,
+    Expense,
+    Balance
+} eventType;
 
 @interface Buck2Expense : NSObject
 
@@ -28,16 +35,18 @@
 @property (nonatomic) BOOL repeats;
 @property (nonatomic, strong) NSNumber *frequency;
 @property (nonatomic, strong) NSString *units;
-
+@property (nonatomic) eventType type;
 @property (nonatomic, strong) NSNumber *runningTotal;
 
 -(Buck2Expense *)initWithDescription:(NSString *)description
                                 date:(NSDate *)date
-                              amount:(NSNumber *)amount;
+                              amount:(NSNumber *)amount
+                                type:(eventType)type;
 
 -(Buck2Expense *)initWithDescription:(NSString *)description
                                 date:(NSDate *)date
                               amount:(NSNumber *)amount
+                                type:(eventType)type
                            frequency:(NSNumber *)frequency
                                units:(NSString *)units;
 

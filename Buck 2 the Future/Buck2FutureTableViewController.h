@@ -16,9 +16,14 @@
 @property (strong, nonatomic) NSArray *budgetEvents;
 @property (strong, nonatomic) NSNumber *yellowLimit;
 @property (strong, nonatomic) NSNumber *redLimit;
+@property (strong, nonatomic) IBOutlet UITableView *table;
+
+- (IBAction)redChanged:(UITextField *)sender;
+- (IBAction)yellowChanged:(UITextField *)sender;
+
+- (void)setBalanceColor:(Buck2UITableViewEventCell *)cel;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

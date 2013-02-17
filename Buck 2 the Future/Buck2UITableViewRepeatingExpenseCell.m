@@ -35,24 +35,22 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    [self awakeFromNib];
+    if (self)
+        [self awakeFromNib];
     return self;
 }
 
 - (void)awakeFromNib
 {
-    if (self) {
-        self.intervalPicker.delegate = self;
-        self.units.inputView = self.intervalPicker;        
-        self.unitOptions = [NSArray arrayWithObjects:UNITS_DAYS, UNITS_WEEKS, UNITS_MONTHS, UNITS_YEARS, nil];
-    }
+    [super awakeFromNib];
+    self.intervalPicker.delegate = self;
+    self.units.inputView = self.intervalPicker;
+    self.unitOptions = [NSArray arrayWithObjects:UNITS_DAYS, UNITS_WEEKS, UNITS_MONTHS, UNITS_YEARS, nil];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 #pragma mark - Picker view delegate

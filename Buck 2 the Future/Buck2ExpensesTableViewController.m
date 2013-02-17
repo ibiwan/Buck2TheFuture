@@ -35,10 +35,12 @@
 {
     [self.crystalBall addExpense:@"dentist"
                           onDate:[NSDate date]
-                      withAmount:[NSNumber numberWithDouble:25.00]];
+                      withAmount:[NSNumber numberWithFloat:25.00]
+                          asType:Expense];
     [self.crystalBall addExpense:@"cassidy"
                           onDate:[NSDate date]
-                      withAmount:[NSNumber numberWithDouble:35.00]
+                      withAmount:[NSNumber numberWithFloat:35.00]
+                          asType:Expense
              withRepetitionEvery:[NSNumber numberWithInt:2]
                           ofUnit:UNITS_WEEKS];
 }
@@ -65,11 +67,11 @@
     [self.view addGestureRecognizer:tap];
 }
 
--(void)dismissKeyboard {
+-(void) dismissKeyboard {
     [self.view endEditing:YES];
 }
 
-- (void)viewDidUnload
+-(void) viewDidUnload
 {
     [self setTableView:nil];
     [super viewDidUnload];
@@ -82,33 +84,62 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:()sender
 {
-    NSMutableArray *budgetEvents = [[NSMutableArray alloc] init];
-    NSDate *now = [[NSDate alloc] initWithTimeIntervalSinceNow:3024000.0];
-    NSDate *expenseDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];
-    Buck2CrystalBall *ball = [self.crystalBall copy];
-    float runningTotal = 0.0;
-    while ([ball expenseCount] > 0
-           && [expenseDate compare:now] == NSOrderedAscending)
-    {
-        Buck2Expense *expense = [ball getNextExpense];
-        runningTotal += [expense.amount floatValue];
-        expense.runningTotal = [NSNumber numberWithFloat:runningTotal];
-        [budgetEvents addObject:expense];
-        expenseDate = expense.date;
-    }
     if ([segue.identifier isEqualToString:@"segueToFuture"]) {
+        NSDateComponents *interval = [[NSDateComponents alloc] init];
+        [interval setMonth:3];
+        NSDate *end = [[NSCalendar currentCalendar] dateByAddingComponents:interval
+                                                                    toDate:[[NSDate alloc] init]
+                                                                   options:0];
+        NSArray *events = [self.crystalBall getEventsFrom:[NSDate distantPast] to:end];
+        float runningTotal = 0.0;
+        for (Buck2Expense *event in events) {
+            switch (event.type) {
+                case Income:
+                    runningTotal += [event.amount floatValue];
+                    break;
+                case Balance:
+                    runningTotal = [event.amount floatValue];
+                    break;
+                default: // assume Expense
+                    runningTotal -= [event.amount floatValue];
+                    break;
+            }
+            event.runningTotal = [NSNumber numberWithFloat:runningTotal];
+        }
         Buck2FutureTableViewController *target = (Buck2FutureTableViewController*)segue.destinationViewController;
-        target.budgetEvents = budgetEvents;
-        target.yellowLimit = [NSNumber numberWithDouble:200.0];
-        target.redLimit = [NSNumber numberWithDouble:5.1];
+        target.budgetEvents = events;
+        target.yellowLimit = self.crystalBall.yellowLimit;
+        target.redLimit = self.crystalBall.redLimit;
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(limitsChanged:)
+                                                     name:@"limitsChanged"
+                                                   object:nil ];
     }
 }
 
 #pragma mark - Modify Row
 
+- (void) limitsChanged:(NSNotification *)n
+{
+    Buck2FutureTableViewController *future = n.object;
+    self.crystalBall.yellowLimit = future.yellowLimit;
+    self.crystalBall.redLimit = future.redLimit;
+    [self.crystalBall saveToDefaults];
+}
+
+- (Buck2UITableViewExpenseCell *) cellFromSender:(UIControl *)sender
+{
+    return (Buck2UITableViewExpenseCell *)sender.superview.superview;
+}
+
+- (NSInteger) indexFromSender:(UIControl *)sender
+{
+    return [self cellFromSender:sender].row;
+}
+
 - (IBAction)descriptionChanged:(UITextField *)sender
 {
-    Buck2Expense *expense = [self.crystalBall expenseAtIndex:((Buck2UITableViewExpenseCell *)(sender.superview.superview)).row];
+    Buck2Expense *expense = [self.crystalBall expenseAtIndex:[self indexFromSender:sender]];
     expense.description = sender.text;
     [self.crystalBall saveToDefaults];
 }
@@ -118,7 +149,7 @@
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
     [f setNumberStyle:NSNumberFormatterDecimalStyle];
 
-    Buck2Expense *expense = [self.crystalBall expenseAtIndex:((Buck2UITableViewExpenseCell *)(sender.superview.superview)).row];
+    Buck2Expense *expense = [self.crystalBall expenseAtIndex:[self indexFromSender:sender]];
     expense.amount = [f numberFromString:sender.text];
     if (expense.amount == nil)
     {
@@ -133,7 +164,7 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
     
-    Buck2Expense *expense = [self.crystalBall expenseAtIndex:((Buck2UITableViewExpenseCell *)(sender.superview.superview)).row];
+    Buck2Expense *expense = [self.crystalBall expenseAtIndex:[self indexFromSender:sender]];
     expense.date = [df dateFromString: sender.text];
     if (expense.date == nil)
     {
@@ -148,7 +179,7 @@
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
     [f setNumberStyle:NSNumberFormatterDecimalStyle];
 
-    Buck2Expense *expense = [self.crystalBall expenseAtIndex:((Buck2UITableViewExpenseCell *)(sender.superview.superview)).row];
+    Buck2Expense *expense = [self.crystalBall expenseAtIndex:[self indexFromSender:sender]];
     expense.frequency = [f numberFromString:sender.text];
     if (expense.amount == nil)
     {
@@ -160,29 +191,53 @@
 
 - (IBAction)unitsChanged:(UITextField *)sender
 {
-    Buck2Expense *expense = [self.crystalBall expenseAtIndex:((Buck2UITableViewExpenseCell *)(sender.superview.superview)).row];
+    Buck2Expense *expense = [self.crystalBall expenseAtIndex:[self indexFromSender:sender]];
     expense.units = sender.text;
     [self.crystalBall saveToDefaults];
 }
 
 - (IBAction)toggleRepeat:(UISwitch *)sender {
-    [self.crystalBall toggleRepeatAtIndex:((Buck2UITableViewExpenseCell *)(sender.superview.superview)).row];
+    [self.crystalBall toggleRepeatAtIndex:[self indexFromSender:sender]];
     [self.crystalBall saveToDefaults];
     [self.tableView reloadData];
+}
+
+- (IBAction)toggleType:(UIButton *)sender {
+    Buck2UITableViewExpenseCell *cell =[self cellFromSender:sender];
+    Buck2Expense *expense = [self.crystalBall expenseAtIndex:cell.row];
+    switch (expense.type) {
+        case Expense:
+            expense.type = Income;
+            break;
+        case Income:
+            expense.type = Balance;
+            break;
+        default: // start with Expense if unknown
+            expense.type = Expense;
+            break;
+    }
+    cell.type = expense.type;
+    [cell colorFlow];
 }
 
 #pragma mark - Modify Table (add/remove row)
 
-- (IBAction)addExpense {
-    [self.crystalBall addExpense:@""
-                          onDate:[[NSDate alloc] init]
-                      withAmount:[NSNumber numberWithDouble:0.0]];
+- (IBAction)deleteExpense:(UIButton *)sender {
+    [self.crystalBall deleteEventAtIndex:((Buck2UITableViewExpenseCell *)(sender.superview.superview)).row];
     [self.crystalBall saveToDefaults];
     [self.tableView reloadData];
 }
 
-- (IBAction)deleteExpense:(UIButton *)sender {
-    [self.crystalBall deleteEventAtIndex:((Buck2UITableViewExpenseCell *)(sender.superview.superview)).row];
+- (IBAction)addRow:(UIButton *)sender {
+    eventType type = Expense;
+    if ([sender.titleLabel.text isEqualToString:@"Income"])
+        type = Income;
+    if ([sender.titleLabel.text isEqualToString:@"Balance"])
+        type = Balance;
+    [self.crystalBall addExpense:@""
+                              onDate:[[NSDate alloc] init]
+                          withAmount:[NSNumber numberWithFloat:0.0]
+                              asType:type];
     [self.crystalBall saveToDefaults];
     [self.tableView reloadData];
 }
@@ -252,6 +307,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     cell.amount.text = [expense.amount stringValue];
     cell.date.text = [expense.date description];
     cell.row = [indexPath row];
+    cell.type = expense.type;
     [cell.repeatSwitch setOn:NO animated:YES];
 
     if ([cell isKindOfClass:[Buck2UITableViewRepeatingExpenseCell class]]) {
@@ -259,5 +315,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         ((Buck2UITableViewRepeatingExpenseCell *)cell).howOften.text = [expense.frequency stringValue];
         ((Buck2UITableViewRepeatingExpenseCell *)cell).units.text = expense.units;
     }
+    [cell colorFlow];
 }
 @end

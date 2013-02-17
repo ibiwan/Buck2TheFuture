@@ -15,41 +15,98 @@
 -(NSNumber *)yellowLimit
 {
     if (!_yellowLimit)
-        _yellowLimit = [NSNumber numberWithDouble:100.0];
+        _yellowLimit = [NSNumber numberWithFloat:100.0];
     return _yellowLimit;
 }
 
 -(NSNumber *)redLimit
 {
     if (!_redLimit)
-        _redLimit = [NSNumber numberWithDouble:20.0];
+        _redLimit = [NSNumber numberWithFloat:20.0];
     return _redLimit;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
+-(void) viewDidLoad
 {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void) dismissKeyboard {
+    [self.view endEditing:YES];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSNumber *)getNumberFromText:(NSString *)strNum
+{
+    NSNumber *num;
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    
+    [f setNumberStyle:(NSNumberFormatterStyle)NSNumberFormatterBehaviorDefault];
+    num = [f numberFromString:strNum];
+    if (num)
+        return num;
+    
+    [f setNumberStyle:NSNumberFormatterCurrencyStyle];
+    num = [f numberFromString:strNum];
+    if (num)
+        return num;
+
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    num = [f numberFromString:strNum];
+    if (num)
+        return num;
+    
+    return [NSNumber numberWithFloat:0.0];
+}
+
+- (void)setBalanceColor:(Buck2UITableViewEventCell *)cel
+{
+    NSNumber *n = [self getNumberFromText:cel.Balance.text];
+    
+    if ([n compare:self.redLimit] == NSOrderedAscending)
+        cel.Balance.textColor = [UIColor redColor];
+    else if ([n compare:self.yellowLimit] == NSOrderedAscending)
+        cel.Balance.textColor = [UIColor yellowColor];
+    else
+        cel.Balance.textColor = [UIColor blackColor];
+    
+    [cel setNeedsDisplay];
+}
+
+- (void)handleLimitChange
+{
+    for (UITableViewCell* cel in self.table.visibleCells) {
+        if ([cel isMemberOfClass:[Buck2UITableViewEventCell class]]) {
+            [self setBalanceColor:(Buck2UITableViewEventCell *)cel];
+        }
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"limitsChanged"
+                                                        object:self ];    
+}
+
+- (IBAction)redChanged:(UITextField *)sender
+{
+    self.redLimit = [self getNumberFromText:sender.text];
+    [self handleLimitChange];
+}
+
+- (IBAction)yellowChanged:(UITextField *)sender
+{
+    self.yellowLimit = [self getNumberFromText:sender.text];
+    [self handleLimitChange];
 }
 
 #pragma mark - Table view data source
@@ -102,6 +159,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     if (0 == indexPath.row )
     {
         Buck2UITableViewLimitsCell *cel = (Buck2UITableViewLimitsCell *)cell;
+        
         cel.Yellow.text = [NSString stringWithFormat:@"$%@", self.yellowLimit];
         cel.Red.text = [NSString stringWithFormat:@"$%@", self.redLimit];
     }
@@ -109,14 +167,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     {
         Buck2UITableViewEventCell *cel = (Buck2UITableViewEventCell *)cell;
         Buck2Expense *exp = [self.budgetEvents objectAtIndex:[indexPath row]-1];
+        
         cel.Description.text = exp.description;
         cel.Date.text = [exp.date description];
         cel.Amount.text = [NSString stringWithFormat:@"$%@", exp.amount];
         cel.Balance.text = [NSString stringWithFormat:@"$%@", exp.runningTotal];
-        if (exp.amount > self.yellowLimit)
-            cel.Balance.textColor = [UIColor yellowColor];
-        if (exp.amount > self.redLimit)
-            cel.Balance.textColor = [UIColor redColor];
+        
+        [self setBalanceColor:cel];
     }
 }
 

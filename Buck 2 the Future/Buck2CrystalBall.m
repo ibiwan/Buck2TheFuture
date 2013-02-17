@@ -22,6 +22,8 @@
 
 @synthesize expenses = _expenses;
 @synthesize calendar = _calendar;
+@synthesize redLimit = _redLimit;
+@synthesize yellowLimit = _yellowLimit;
 
 -(NSMutableArray *)expenses
 {
@@ -37,25 +39,29 @@
     return _calendar;
 }
 
--(void)addExpense:(Buck2Expense *)expense
-{
-    [self.expenses addObject:expense];
-    [self.expenses sortUsingComparator:
+-(void)addExpense:(Buck2Expense *)expense toArray:(NSMutableArray *)array {
+    [array addObject:expense];
+    [array sortUsingComparator:
      ^NSComparisonResult(Buck2Expense *expense1, Buck2Expense *expense2)
-    {
-        return [expense1.date compare:expense2.date];
-    }];
+     {
+         return [expense1.date compare:expense2.date];
+     }];    
 }
 
--(void)addExpense:(NSString *)description onDate:(NSDate *) date withAmount:(NSNumber *)amount
+-(void)addExpense:(Buck2Expense *)expense
 {
-    Buck2Expense *expense = [[Buck2Expense alloc] initWithDescription:description date:date amount:amount];
+    [self addExpense:expense toArray:self.expenses];
+}
+
+-(void)addExpense:(NSString *)description onDate:(NSDate *) date withAmount:(NSNumber *)amount asType:(eventType)type
+{
+    Buck2Expense *expense = [[Buck2Expense alloc] initWithDescription:description date:date amount:amount type:type];
     [self addExpense:expense];
 }
 
--(void)addExpense:(NSString *)description onDate:(NSDate *) date withAmount:(NSNumber *)amount withRepetitionEvery:(NSNumber *)n ofUnit:(NSString *)units
+-(void)addExpense:(NSString *)description onDate:(NSDate *) date withAmount:(NSNumber *)amount asType:(eventType)type withRepetitionEvery:(NSNumber *)n ofUnit:(NSString *)units
 {
-    Buck2Expense *expense = [[Buck2Expense alloc] initWithDescription:description date:date amount:amount frequency:n units:units];
+    Buck2Expense *expense = [[Buck2Expense alloc] initWithDescription:description date:date amount:amount type:type frequency:n units:units];
     [self addExpense:expense];
 }
 
@@ -64,29 +70,53 @@
     self.expenses = nil;
 }
 
--(Buck2Expense *)getNextExpense
+-(NSDate *)getDateFollowing:(NSDate *)date withUnits:(NSString *)units andCount:(NSNumber *)frequency {
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    if ([units isEqualToString:UNITS_DAYS])
+        [components setDay:[frequency integerValue]];
+    if ([units isEqualToString:UNITS_WEEKS])
+        [components setWeek:[frequency integerValue]];
+    if ([units isEqualToString:UNITS_MONTHS])
+        [components setMonth:[frequency integerValue]];
+    if ([units isEqualToString:UNITS_YEARS])
+        [components setYear:[frequency integerValue]];
+    return [[NSCalendar currentCalendar]
+            dateByAddingComponents:components toDate:date options:0];
+    
+}
+
+-(NSArray *)getEventsFrom:(NSDate *)startDate to:(NSDate *)endDate
 {
-    Buck2Expense *nextExpense = [self.expenses lastObject];
-    if (self.expenses.count > 0)
-        [self.expenses removeObject:nextExpense];
-    if (nextExpense.repeats)
-    {
-        NSDateComponents *components = [[NSDateComponents alloc] init];
-        if ([nextExpense.units isEqualToString:UNITS_DAYS])
-            [components setDay:[nextExpense.frequency integerValue]];
-        if ([nextExpense.units isEqualToString:UNITS_WEEKS])
-            [components setWeek:[nextExpense.frequency integerValue]];
-        if ([nextExpense.units isEqualToString:UNITS_MONTHS])
-            [components setMonth:[nextExpense.frequency integerValue]];
-        if ([nextExpense.units isEqualToString:UNITS_YEARS])
-            [components setYear:[nextExpense.frequency integerValue]];
-        NSDate *followingDate = [[NSCalendar currentCalendar]
-                                 dateByAddingComponents:components toDate:nextExpense.date options:0];
-        Buck2Expense *followingExpense = [nextExpense copy];
-        followingExpense.date = followingDate;
-        [self addExpense: followingExpense];
+    NSMutableArray *events = [[NSMutableArray alloc] init];
+    NSMutableArray *scratch = [[NSMutableArray alloc] init];
+    for (Buck2Expense *expense in self.expenses) {
+        NSComparisonResult order = [expense.date compare:endDate];
+        if (order == NSOrderedAscending || order == NSOrderedSame) {
+            [self addExpense:expense toArray:scratch];
+        }
     }
-    return nextExpense;
+    while (scratch.count > 0) {
+        Buck2Expense *expense = [scratch lastObject];
+        [scratch removeObject:expense];
+        // if event is after start date, add it to events.
+        // otherwise, just add its repetition to scratch to re-evalulate
+        NSComparisonResult order = [expense.date compare:startDate];
+        if (order == NSOrderedDescending || order == NSOrderedSame) {
+            [self addExpense:expense toArray:events];
+        }
+        if (expense.repeats) {
+            NSDate *repeatDate = [self getDateFollowing:expense.date
+                                              withUnits:expense.units
+                                               andCount:expense.frequency];
+            NSComparisonResult order = [repeatDate compare:endDate];
+            if (order == NSOrderedAscending || order == NSOrderedSame) {
+                Buck2Expense *repeatExpense = [expense copy];
+                repeatExpense.date = repeatDate;
+                [self addExpense:repeatExpense toArray:scratch];
+            }
+        }
+    }
+    return [events copy];
 }
 
 -(Buck2Expense *)expenseAtIndex:(NSUInteger) index
@@ -139,11 +169,15 @@
 -(void)saveToDefaults
 {
     [[NSUserDefaults standardUserDefaults] setObject:[self array] forKey:KEY_EXPS];
+    [[NSUserDefaults standardUserDefaults] setObject:self.yellowLimit forKey:KEY_YEL];
+    [[NSUserDefaults standardUserDefaults] setObject:self.redLimit forKey:KEY_RED];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(BOOL)loadFromDefaults
 {
+    self.yellowLimit = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_YEL];
+    self.redLimit = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_RED];
     NSArray *expenseDicts = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_EXPS];
     if (expenseDicts) {
         [self clearExpenses];
