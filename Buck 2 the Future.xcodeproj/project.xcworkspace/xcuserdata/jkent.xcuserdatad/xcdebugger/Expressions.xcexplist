@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[Buck2UITableViewRepeatingExpenseCell awakeFromNib]:Buck2UITableViewRepeatingExpenseCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2FutureTableViewController tableView:cellForRowAtIndexPath:]:Buck2FutureTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[indexPath row]">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "[indexPath indexAtPosition:0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2ExpensesTableViewController toggleRepeat:]:Buck2ExpensesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.table">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2CrystalBall addExpense:]:Buck2CrystalBall.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[sorter comparator]">
+            </PersistentString>
+            <PersistentString
+               value = "(NSString *)(keys[0])">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2ExpensesTableViewController tableView:cellForRowAtIndexPath:]:Buck2ExpensesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2FutureTableViewController redChanged:]:Buck2FutureTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.yellowLimit">
+            </PersistentString>
+            <PersistentString
+               value = "self.redLimit">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2FutureTableViewController yellowChanged:]:Buck2FutureTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.yellowLimit">
+            </PersistentString>
+            <PersistentString
+               value = "self.redLimit">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2CrystalBall addExpense:onDate:withAmount:]:Buck2CrystalBall.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[k objectAtIndex:0]">
+            </PersistentString>
+            <PersistentString
+               value = "[expense allKeys]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2FutureTableViewController tableView:numberOfRowsInSection:]:Buck2FutureTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.budgetEvents count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2UITableViewExpenseCell awakeFromNib]:Buck2UITableViewExpenseCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2FutureTableViewController tableView:willDisplayCell:forRowAtIndexPath:]:Buck2FutureTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.yellowLimit">
+            </PersistentString>
+            <PersistentString
+               value = "exp.runningTotal &lt; self.redLimit">
+            </PersistentString>
+            <PersistentString
+               value = "exp.runningTotal">
+            </PersistentString>
+            <PersistentString
+               value = "self.redLimit">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2ExpensesTableViewController tableView:heightForRowAtIndexPath:]:Buck2ExpensesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[expense objectForKey:@&quot;description&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2UITableViewExpenseCell colorFlow]:Buck2UITableViewExpenseCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.type">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2ExpensesTableViewController prepareForSegue:sender:]:Buck2ExpensesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.crystalBall expenseCount]">
+            </PersistentString>
+            <PersistentString
+               value = "[ball expenseCount]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2ExpensesTableViewController crystalBall]:Buck2ExpensesTableViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2ExpensesTableViewController tableView:willDisplayCell:forRowAtIndexPath:]:Buck2ExpensesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "c.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Buck2CrystalBall getNextExpense]:Buck2CrystalBall.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.expenses">
+            </PersistentString>
+            <PersistentString
+               value = "nextExpense.description">
+            </PersistentString>
+            <PersistentString
+               value = "followingExpense.description">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
