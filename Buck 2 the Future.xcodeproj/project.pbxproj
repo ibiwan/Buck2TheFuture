@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF14721E15FED56A00B7B3D8 /* Buck2Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = EF14721D15FED56A00B7B3D8 /* Buck2Expense.m */; };
+		EF343344162268F7002C3DAB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF343343162268F7002C3DAB /* Default-568h@2x.png */; };
+		EF343348162529B1002C3DAB /* Buck2IntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF343347162529B1002C3DAB /* Buck2IntervalPickerView.m */; };
+		EF5101B2164A52300042DB93 /* Buck2UITableViewEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5101B1164A52300042DB93 /* Buck2UITableViewEventCell.m */; };
+		EF5101B5164A52750042DB93 /* Buck2UITableViewLimitsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5101B4164A52750042DB93 /* Buck2UITableViewLimitsCell.m */; };
+		EF5E945115F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5E945015F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m */; };
+		EF6B4E0B15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6B4E0A15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m */; };
+		EFC80E7C15F86C750082AB83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC80E7B15F86C750082AB83 /* UIKit.framework */; };
+		EFC80E7E15F86C750082AB83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC80E7D15F86C750082AB83 /* Foundation.framework */; };
+		EFC80E8015F86C750082AB83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC80E7F15F86C750082AB83 /* CoreGraphics.framework */; };
+		EFC80E8615F86C750082AB83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFC80E8415F86C750082AB83 /* InfoPlist.strings */; };
+		EFC80E8815F86C750082AB83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E8715F86C750082AB83 /* main.m */; };
+		EFC80E8C15F86C750082AB83 /* Buck2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E8B15F86C750082AB83 /* Buck2AppDelegate.m */; };
+		EFC80E8F15F86C750082AB83 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC80E8D15F86C750082AB83 /* MainStoryboard.storyboard */; };
+		EFC80E9215F86C750082AB83 /* Buck2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E9115F86C750082AB83 /* Buck2ViewController.m */; };
+		EFC80E9A15F871180082AB83 /* Buck2ExpensesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E9915F871180082AB83 /* Buck2ExpensesTableViewController.m */; };
+		EFC80E9D15F8764C0082AB83 /* Buck2FutureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E9C15F8764C0082AB83 /* Buck2FutureTableViewController.m */; };
+		EFC80EA015F877910082AB83 /* Buck2CrystalBall.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC80E9F15F877910082AB83 /* Buck2CrystalBall.m */; };
+		EFF0A4D816006711002ED157 /* Buck2UITableViewExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF0A4D716006711002ED157 /* Buck2UITableViewExpenseCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EF14721C15FED56A00B7B3D8 /* Buck2Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2Expense.h; sourceTree = "<group>"; };
+		EF14721D15FED56A00B7B3D8 /* Buck2Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2Expense.m; sourceTree = "<group>"; };
+		EF343343162268F7002C3DAB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EF343346162529B1002C3DAB /* Buck2IntervalPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2IntervalPickerView.h; sourceTree = "<group>"; };
+		EF343347162529B1002C3DAB /* Buck2IntervalPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2IntervalPickerView.m; sourceTree = "<group>"; };
+		EF5101B0164A52300042DB93 /* Buck2UITableViewEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewEventCell.h; sourceTree = "<group>"; };
+		EF5101B1164A52300042DB93 /* Buck2UITableViewEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2UITableViewEventCell.m; sourceTree = "<group>"; };
+		EF5101B3164A52750042DB93 /* Buck2UITableViewLimitsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewLimitsCell.h; sourceTree = "<group>"; };
+		EF5101B4164A52750042DB93 /* Buck2UITableViewLimitsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2UITableViewLimitsCell.m; sourceTree = "<group>"; };
+		EF5E944F15F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewRepeatingExpenseCell.h; sourceTree = "<group>"; };
+		EF5E945015F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2UITableViewRepeatingExpenseCell.m; sourceTree = "<group>"; };
+		EF6B4E0915FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewNewExpenseCell.h; sourceTree = "<group>"; };
+		EF6B4E0A15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2UITableViewNewExpenseCell.m; sourceTree = "<group>"; };
+		EFC80E7715F86C750082AB83 /* Buck 2 the Future.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buck 2 the Future.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFC80E7B15F86C750082AB83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EFC80E7D15F86C750082AB83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EFC80E7F15F86C750082AB83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EFC80E8315F86C750082AB83 /* Buck 2 the Future-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buck 2 the Future-Info.plist"; sourceTree = "<group>"; };
+		EFC80E8515F86C750082AB83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EFC80E8715F86C750082AB83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EFC80E8915F86C750082AB83 /* Buck 2 the Future-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Buck 2 the Future-Prefix.pch"; sourceTree = "<group>"; };
+		EFC80E8A15F86C750082AB83 /* Buck2AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buck2AppDelegate.h; sourceTree = "<group>"; };
+		EFC80E8B15F86C750082AB83 /* Buck2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Buck2AppDelegate.m; sourceTree = "<group>"; };
+		EFC80E8E15F86C750082AB83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		EFC80E9015F86C750082AB83 /* Buck2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buck2ViewController.h; sourceTree = "<group>"; };
+		EFC80E9115F86C750082AB83 /* Buck2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Buck2ViewController.m; sourceTree = "<group>"; };
+		EFC80E9815F871180082AB83 /* Buck2ExpensesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2ExpensesTableViewController.h; sourceTree = "<group>"; };
+		EFC80E9915F871180082AB83 /* Buck2ExpensesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2ExpensesTableViewController.m; sourceTree = "<group>"; };
+		EFC80E9B15F8764C0082AB83 /* Buck2FutureTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2FutureTableViewController.h; sourceTree = "<group>"; };
+		EFC80E9C15F8764C0082AB83 /* Buck2FutureTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2FutureTableViewController.m; sourceTree = "<group>"; };
+		EFC80E9E15F877910082AB83 /* Buck2CrystalBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2CrystalBall.h; sourceTree = "<group>"; };
+		EFC80E9F15F877910082AB83 /* Buck2CrystalBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2CrystalBall.m; sourceTree = "<group>"; };
+		EFF0A4D616006711002ED157 /* Buck2UITableViewExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buck2UITableViewExpenseCell.h; sourceTree = "<group>"; };
+		EFF0A4D716006711002ED157 /* Buck2UITableViewExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buck2UITableViewExpenseCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFC80E7415F86C750082AB83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFC80E7C15F86C750082AB83 /* UIKit.framework in Frameworks */,
+				EFC80E7E15F86C750082AB83 /* Foundation.framework in Frameworks */,
+				EFC80E8015F86C750082AB83 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF5101AD164A51340042DB93 /* Cell Prototypes */ = {
+			isa = PBXGroup;
+			children = (
+				EF5101B0164A52300042DB93 /* Buck2UITableViewEventCell.h */,
+				EF5101B1164A52300042DB93 /* Buck2UITableViewEventCell.m */,
+				EF5101B3164A52750042DB93 /* Buck2UITableViewLimitsCell.h */,
+				EF5101B4164A52750042DB93 /* Buck2UITableViewLimitsCell.m */,
+				EFF0A4D616006711002ED157 /* Buck2UITableViewExpenseCell.h */,
+				EFF0A4D716006711002ED157 /* Buck2UITableViewExpenseCell.m */,
+				EF6B4E0915FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.h */,
+				EF6B4E0A15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m */,
+				EF5E944F15F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.h */,
+				EF5E945015F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m */,
+			);
+			name = "Cell Prototypes";
+			sourceTree = "<group>";
+		};
+		EF5101AF164A51490042DB93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF14721C15FED56A00B7B3D8 /* Buck2Expense.h */,
+				EF14721D15FED56A00B7B3D8 /* Buck2Expense.m */,
+				EFC80E9E15F877910082AB83 /* Buck2CrystalBall.h */,
+				EFC80E9F15F877910082AB83 /* Buck2CrystalBall.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EFC80E6C15F86C750082AB83 = {
+			isa = PBXGroup;
+			children = (
+				EF343343162268F7002C3DAB /* Default-568h@2x.png */,
+				EFC80E8115F86C750082AB83 /* Buck 2 the Future */,
+				EFC80E7A15F86C750082AB83 /* Frameworks */,
+				EFC80E7815F86C750082AB83 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFC80E7815F86C750082AB83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFC80E7715F86C750082AB83 /* Buck 2 the Future.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFC80E7A15F86C750082AB83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFC80E7B15F86C750082AB83 /* UIKit.framework */,
+				EFC80E7D15F86C750082AB83 /* Foundation.framework */,
+				EFC80E7F15F86C750082AB83 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFC80E8115F86C750082AB83 /* Buck 2 the Future */ = {
+			isa = PBXGroup;
+			children = (
+				EF5101AD164A51340042DB93 /* Cell Prototypes */,
+				EF5101AF164A51490042DB93 /* Model */,
+				EFC80E8D15F86C750082AB83 /* MainStoryboard.storyboard */,
+				EFC80E8A15F86C750082AB83 /* Buck2AppDelegate.h */,
+				EFC80E8B15F86C750082AB83 /* Buck2AppDelegate.m */,
+				EFC80E9015F86C750082AB83 /* Buck2ViewController.h */,
+				EFC80E9115F86C750082AB83 /* Buck2ViewController.m */,
+				EF343346162529B1002C3DAB /* Buck2IntervalPickerView.h */,
+				EF343347162529B1002C3DAB /* Buck2IntervalPickerView.m */,
+				EFC80E9B15F8764C0082AB83 /* Buck2FutureTableViewController.h */,
+				EFC80E9C15F8764C0082AB83 /* Buck2FutureTableViewController.m */,
+				EFC80E9815F871180082AB83 /* Buck2ExpensesTableViewController.h */,
+				EFC80E9915F871180082AB83 /* Buck2ExpensesTableViewController.m */,
+				EFC80E8215F86C750082AB83 /* Supporting Files */,
+			);
+			path = "Buck 2 the Future";
+			sourceTree = "<group>";
+		};
+		EFC80E8215F86C750082AB83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFC80E8315F86C750082AB83 /* Buck 2 the Future-Info.plist */,
+				EFC80E8415F86C750082AB83 /* InfoPlist.strings */,
+				EFC80E8715F86C750082AB83 /* main.m */,
+				EFC80E8915F86C750082AB83 /* Buck 2 the Future-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFC80E7615F86C750082AB83 /* Buck 2 the Future */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFC80E9515F86C750082AB83 /* Build configuration list for PBXNativeTarget "Buck 2 the Future" */;
+			buildPhases = (
+				EFC80E7315F86C750082AB83 /* Sources */,
+				EFC80E7415F86C750082AB83 /* Frameworks */,
+				EFC80E7515F86C750082AB83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Buck 2 the Future";
+			productName = "Buck 2 the Future";
+			productReference = EFC80E7715F86C750082AB83 /* Buck 2 the Future.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFC80E6E15F86C750082AB83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Buck2;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Jeremiah Kent";
+			};
+			buildConfigurationList = EFC80E7115F86C750082AB83 /* Build configuration list for PBXProject "Buck 2 the Future" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EFC80E6C15F86C750082AB83;
+			productRefGroup = EFC80E7815F86C750082AB83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFC80E7615F86C750082AB83 /* Buck 2 the Future */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFC80E7515F86C750082AB83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFC80E8615F86C750082AB83 /* InfoPlist.strings in Resources */,
+				EFC80E8F15F86C750082AB83 /* MainStoryboard.storyboard in Resources */,
+				EF343344162268F7002C3DAB /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFC80E7315F86C750082AB83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFC80E8815F86C750082AB83 /* main.m in Sources */,
+				EFC80E8C15F86C750082AB83 /* Buck2AppDelegate.m in Sources */,
+				EFC80E9215F86C750082AB83 /* Buck2ViewController.m in Sources */,
+				EFC80E9A15F871180082AB83 /* Buck2ExpensesTableViewController.m in Sources */,
+				EFC80E9D15F8764C0082AB83 /* Buck2FutureTableViewController.m in Sources */,
+				EFC80EA015F877910082AB83 /* Buck2CrystalBall.m in Sources */,
+				EF5E945115F9D28700B2B897 /* Buck2UITableViewRepeatingExpenseCell.m in Sources */,
+				EF14721E15FED56A00B7B3D8 /* Buck2Expense.m in Sources */,
+				EF6B4E0B15FEFF1800121B6C /* Buck2UITableViewNewExpenseCell.m in Sources */,
+				EFF0A4D816006711002ED157 /* Buck2UITableViewExpenseCell.m in Sources */,
+				EF343348162529B1002C3DAB /* Buck2IntervalPickerView.m in Sources */,
+				EF5101B2164A52300042DB93 /* Buck2UITableViewEventCell.m in Sources */,
+				EF5101B5164A52750042DB93 /* Buck2UITableViewLimitsCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EFC80E8415F86C750082AB83 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFC80E8515F86C750082AB83 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EFC80E8D15F86C750082AB83 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFC80E8E15F86C750082AB83 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFC80E9315F86C750082AB83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EFC80E9415F86C750082AB83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EFC80E9615F86C750082AB83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Buck 2 the Future/Buck 2 the Future-Prefix.pch";
+				INFOPLIST_FILE = "Buck 2 the Future/Buck 2 the Future-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Buck 2 the Future/CHDataStructures\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EFC80E9715F86C750082AB83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Buck 2 the Future/Buck 2 the Future-Prefix.pch";
+				INFOPLIST_FILE = "Buck 2 the Future/Buck 2 the Future-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Buck 2 the Future/CHDataStructures\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFC80E7115F86C750082AB83 /* Build configuration list for PBXProject "Buck 2 the Future" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFC80E9315F86C750082AB83 /* Debug */,
+				EFC80E9415F86C750082AB83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFC80E9515F86C750082AB83 /* Build configuration list for PBXNativeTarget "Buck 2 the Future" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFC80E9615F86C750082AB83 /* Debug */,
+				EFC80E9715F86C750082AB83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFC80E6E15F86C750082AB83 /* Project object */;
+}
